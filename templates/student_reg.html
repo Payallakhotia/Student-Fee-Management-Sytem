@@ -1,0 +1,16 @@
+<h1>Student Registration</h1>
+
+<form method="post" action="st_reg" enctype="multipart/form-data">
+    <p>Registration No.:<input  type="text" name="T1"/></p>
+    <p>Name:<input type="text" name="T2"/></p>
+    <p>Address:<input type="text" name="T3"/></p>
+    <p>Contact No.:<input type="text" name="T4"/></p>
+    <p>Email:<input type="text" name="T5"/></p>
+     File<input type="file" name="F1"/>
+    <p><input type="submit" name="B1" value="Register"/></p>
+</form>
+
+
+{% if msg %}
+ <h3>{{msg}}</h3>
+{% endif %}

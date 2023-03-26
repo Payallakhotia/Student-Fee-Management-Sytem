@@ -1,0 +1,18 @@
+<h1>Admin Profile</h1>
+{% if kota %}
+   {{kota}}
+
+
+     <h3>{{kota[0]}}</h3>
+
+      <p>Address:{{kota[1]}}</p>
+      <p>Contact No.:{{kota[2]}}</p>
+      <p>Email:{{kota[3]}}</p>
+
+       <form method="post" action="admin_pro1">
+          <input type="submit" name="B1" value="Edit"/>
+       </form>
+
+{% elif msg %}
+ <h3>{{msg}}</h3>
+{% endif %}

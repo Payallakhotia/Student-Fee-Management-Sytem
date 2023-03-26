@@ -1,0 +1,31 @@
+<h1>Admin Home-{{name}}</h1>
+
+{% if photo=='no' %}
+
+<form method="post" action="admin_home" enctype="multipart/form-data">
+    File<input type="file" name="F1"/>
+    <input type="submit" name="B1" value="UPLOAD"/>
+</form>
+
+{% if result %}
+<h3>{{result}}</h3>
+{% endif %}
+
+{% else %}
+<img src="../static/photos/{{photo}}" width="200" height="200"/>
+<p><a href="admin_ch_photo">Change Photo</a></p>
+
+{% endif %}
+
+
+<p><a href="admin_reg">New Admin</a> </p>
+<p><a href="admin_pro">Admin Profile</a> </p>
+<p><a href="admin_ch_pass">Admin Change Password</a></p>
+
+<h2>Accountant</h2>
+<p><a href="accountant_reg">New Accountant</a></p>
+<p><a href="show_accounant">Show All Accountant </a> </p>
+
+
+
+<p><a href="/"><b>Logout</b></a> </p>

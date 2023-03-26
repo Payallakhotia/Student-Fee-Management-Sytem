@@ -1,0 +1,17 @@
+<h1>Edit Accountant</h1>
+
+{% if kota %}
+  <form method="post" action="edit_accountant1">
+      <p>Empolyee No:<input readonly type="text" name="T1" value="{{kota[0]}}"/></p>
+      <p>Name:<input type="text" name="T2" value="{{kota[1]}}"/></p>
+      <p>Designation:<input type="text" name="T3" value="{{kota[2]}}"></p>
+      <p>Contact No:<input type="text" name="T4" value="{{kota[3]}}"/></p>
+      <p>Email:<input readonly type="text" name="T5" value="{{kota[4]}}"/></p>
+      <P><input type="submit" name="B1" value="Saved Changes"/></P>
+  </form>
+
+<h3><a href="show_accounant">Back</a></h3>
+
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}

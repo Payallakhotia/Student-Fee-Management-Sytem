@@ -1,0 +1,14 @@
+<h1>Student Fee</h1>
+
+<form method="post" action="st_fee">
+    <p>Regestration No:<input type="text" name="T1"/></p>
+    <p>Course id:<input type="text" name="T2"/></p>
+    <p>Amount:<input type="text" name="T3"/></p>
+    <p>Deposition Date:<input type="text" name="T4"/></p>
+    <p>Remark:<input type="text" name="T5"/></p>
+    <p><input type="submit" name="B1" value="Register"/></p>
+</form>
+
+{% if msg %}
+ <h3>{{msg}}</h3>
+{% endif %}

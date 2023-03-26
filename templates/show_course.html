@@ -1,0 +1,34 @@
+<h1>Show Course Details</h1>
+
+{% if kota %}
+  {{kota}}
+
+<table border="1" style="border-collapse:collapse" width="50%">
+    {% for couid in kota %}
+    <tr>
+        <td>
+            <h3>{{couid[1]}}</h3>
+
+            <p><b>course Id</b>:{{couid[0]}}</p>
+            <p><b>Course</b>:{{couid[2]}}</p>
+            <p><b>Fee</b>:{{couid[3]}}</p>
+            <p><b>Remark</b>:{{couid[4]}}</p>
+        </td>
+
+        <td>
+            <form method="post" action="edit_course">
+                <input type="hidden" name="H1" value="{{couid[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+             <form method="post" action="delete_course">
+                <input type="hidden" name="H1" value="{{couid[0]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}

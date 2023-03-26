@@ -1,0 +1,16 @@
+<h1>Edit Student's Course Details</h1>
+
+{% if kota %}
+
+<form method="post" action="edit_course1">
+    <p>Course Id<input type="text" name="T1" value="{{kota[0]}}"/></p>
+    <p>Registration No<input type="text" name="T2" value="{{kota[1]}}"/></p>
+    <p>Course<input type="text" name="T3" value="{{kota[2]}}"/></p>
+    <p>Fees<input type="text" name="T4" value="{{kota[3]}}"/></p>
+    <p>Remark<input type="text" name="T5" value="{{kota[4]}}"/></p>
+    <p><input type="submit" name="B1" value="Edit"/></p>
+</form>
+
+{% elif msg %}
+  <h4>{{msg}}</h4>
+{% endif %}

@@ -1,0 +1,51 @@
+<table border="1" style="border-collapse:collapse" width="50%">
+    <tr>
+        <td>
+            <h2>Student Course Details</h2>
+
+            {% if data1 %}
+               {% for couid in data1 %}
+
+                    <p>Course Id:{{couid[0]}}</p>
+                    <p>Registration No.:{{couid[1]}}</p>
+                    <p>Course:{{couid[2]}}</p>
+                    <p>Fees:{{couid[3]}}</p>
+                    <p>Remark:{{couid[4]}}</p>
+
+               <form method="post" action="edit_course">
+                   <input type="hidden" name="H1" value="{{couid[0]}}"/>
+                   <input type="submit" name="B1" value="Edit"/>
+               </form>
+
+               {% endfor%}
+            {% endif %}
+        </td>
+
+        <td>
+
+            <h2>Student Fees Details</h2>
+
+            {% if data2 %}
+              {% for fee in data2 %}
+
+                  <p>Transaction No.:{{fee[0]}}</p>
+                  <p>Registration No.:{{fee[1]}}</p>
+                  <p>Course Id:{{fee[2]}}</p>
+                  <p>Amount:{{fee[3]}}</p>
+                  <p>Deposition Date:{{fee[4]}}</p>
+                  <p>Remark:{{fee[5]}}</p>
+
+              <form method="post" action="edit_fee">
+                  <input type="hidden" name="H1" value="{{fee[0]}}"/>
+                  <input type="submit" name="B1" value="Edit"/>
+              </form>
+
+              {% endfor %}
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+{% if msg %}
+  <h3>{{msg}}</h3>
+{% endif %}

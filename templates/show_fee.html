@@ -1,0 +1,39 @@
+<h1>Show Student Fee Details</h1>
+
+{% if kota %}
+  {{kota}}
+
+<table border="1" style="border-collapse:collapse" width="50%">
+    {% for fee in kota %}
+    <tr>
+        <td>
+            <h3>{{fee[1]}}</h3>
+
+            <p><b>Transaction No</b>:{{fee[0]}}</p>
+            <p><b>Course Id</b>:{{fee[2]}}</p>
+            <p><b>Amount</b>:{{fee[3]}}</p>
+            <p><b>Deposition Date</b>:{{fee[4]}}</p>
+             <p><b>Remark</b>:{{fee[5]}}</p>
+
+        </td>
+
+        <td>
+            <form method="post" action="edit_fee">
+                <input type="hidden" name="H1" value="{{fee[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+             <form method="post" action="delete_course">
+                <input type="hidden" name="H1" value="{{fee[0]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+
+
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}

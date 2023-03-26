@@ -1,0 +1,16 @@
+<h1>Accountant Registration</h1>
+
+<form method="post" action="accountant_reg">
+    <p>Employee No.:<input  type="text" name="T1"/></p>
+    <p>Name:<input type="text" name="T2"/></p>
+    <p>Designation:<input type="text" name="T3"/></p>
+    <p>Contact No.:<input type="text" name="T4"/></p>
+    <p>Email:<input type="text" name="T5"/></p>
+    <p>Password:<input type="text" name="T6"/></p>
+    <p>Conform Password:<input type="text" name="T7"/></p>
+    <p><input type="submit" name="B1" value="Register"/></p>
+</form>
+
+{% if msg %}
+ <h3>{{msg}}</h3>
+{% endif %}

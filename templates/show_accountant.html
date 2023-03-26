@@ -1,0 +1,36 @@
+<h1>Show Accountant</h1>
+
+{% if kota %}
+  {{kota}}
+
+<table border="1" style="border-collapse:collapse" width="50%">
+    {% for emp in kota %}
+    <tr>
+        <td>
+            <h3>{{emp[1]}}</h3>
+
+            <p><b>Employee No.</b>:{{emp[0]}}</p>
+            <p><b>Degisnation:</b>{{emp[2]}}</p>
+            <p><b>Contact No:</b>{{emp[3]}}</p>
+            <p><b>Email:{{emp[4]}}</b></p>
+
+        </td>
+
+        <td>
+            <form method="post" action="edit_accountant">
+                <input type="hidden" name="H1" value="{{emp[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+             <form method="post" action="delete_accountant">
+                <input type="hidden" name="H1" value="{{emp[0]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}

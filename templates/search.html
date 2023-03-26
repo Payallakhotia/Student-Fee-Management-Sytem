@@ -1,0 +1,51 @@
+<form method="post">
+    <p>Name
+        <select name="T1">
+            <option>Manish Sharma</option>
+             <option>Bhawna Singh</option>
+             <option>Lakshya Laddha</option>
+            <option>Aman</option>
+        </select>
+    </p>
+      <p><input type="submit" name="B1" value="Search"/></p>
+</form>
+
+{% if kota %}
+  {{kota}}
+
+<table border="1" style="border-collapse:collapse" width="50%">
+    {% for reg in kota %}
+    <tr>
+        <td>
+            <h3>{{reg[1]}}</h3>
+
+            <p><b>Registration No.</b>:{{reg[0]}}</p>
+            <p><b>Address</b>:{{reg[2]}}</p>
+            <p><b>Contact No.</b>:{{reg[3]}}</p>
+            <p><b>Email</b>:{{reg[4]}}</p>
+
+        </td>
+
+        <td>
+            <form method="post" action="edit_student">
+                <input type="hidden" name="H1" value="{{reg[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+             <form method="post" action="delete_student">
+                <input type="hidden" name="H1" value="{{reg[0]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+
+            <form method="post" action="info">
+                <input type="hidden" name="H1" value="{{reg[0]}}"/>
+                <input type="submit" name="B1" value="Info"/>
+            </form>
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% elif msg %}
+<h3>{{msg}}</h3>
+{% endif %}

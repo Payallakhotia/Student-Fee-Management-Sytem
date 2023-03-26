@@ -1,0 +1,15 @@
+<h1>Admin Regestration</h1>
+
+<form method="post" action="admin_reg">
+    <p>Name:<input type="text" name="T1"/></p>
+    <p>Address<input type="text" name="T2"/></p>
+    <p>Contact<input type="text" name="T3"/></p>
+    <p>Email:<input type="text" name="T4"/></p>
+    <p>Password:<input type="text" name="T5"/></p>
+    <p>Conform Password:<input type="text" name="T6"/></p>
+    <p><input type="submit" name="B1" value="Register"/> </p>
+</form>
+
+{% if admin %}
+ <h3>{{admin}}</h3>
+{% endif %}

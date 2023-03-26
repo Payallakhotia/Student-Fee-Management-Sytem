@@ -1,0 +1,13 @@
+<h1>Admin Change Password</h1>
+
+<form method="post" action="admin_ch_pass">
+    <p>Old Password:<input type="password" name="T1"/></p>
+    <p>New Password:<input type="password" name="T2"/></p>
+    <p>Conform Password:<input type="password" name="T3"/></p>
+    <input type="submit" name="B1" value="Change"/>
+</form>
+
+{% if msg %}
+<h3> {{msg}}</h3>
+{% endif %}
+

@@ -1,0 +1,37 @@
+<h1>Accountant Home-{{name}}</h1>
+
+{% if photo=='no' %}
+
+<form method="post" action="accountant_home" enctype="multipart/form-data">
+    File<input type="file" name="F1"/>
+    <input type="submit" name="B1" value="UPLOAD"/>
+</form>
+
+{% if result %}
+<h3>{{result}}</h3>
+{% endif %}
+
+{% else %}
+<img src="../static/photos/{{photo}}" width="300" height="200"/>
+<p><a href="accountant_ch_photo">Change Photo</a></p>
+
+{% endif %}
+
+
+<p><a href="st_reg">Student Registration</a></p>
+<p><a href="show_student">Show Student</a></p><br>
+
+<p><a href="st_course">Student Course</a></p>
+<p><a href="show_course">Show Course</a></p><br>
+
+
+<p><a href="st_fee">Students Fee</a></p>
+<p><a href="show_fee">Show Fee</a></p>
+
+
+<p><a href="search">Search</a></p>
+
+
+
+
+<p><a href="login"><b>Logout</b></a> </p>
